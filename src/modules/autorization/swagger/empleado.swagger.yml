@@ -1,0 +1,116 @@
+tags:
+  name: Empleado
+  description: Endpoints para respuestas de empleados
+components:
+  schemas:
+    EmpleadoCreate:
+      type: object
+      properties:
+        cedula:
+          type: string
+          example: 10023344554
+        nombres:
+          type: string
+          example: Juan Manuel
+        apellidos:
+          type: string
+          example: Kruger Rios
+        email:
+          type: string
+          example: manuel2022@mail.com
+        fechaNacimiento:
+          type: date
+          example: 1999-02-01
+        domicilio:
+          type: string
+          example: Calle Juan Mera y Cristobal Colón
+        telefono:
+          type: string
+          example: 09976636366
+        estadoVacunacion:
+          type: boolean
+          example: true
+        tipoVacuna:
+          type: string
+          example: Pfizer
+        fechaVacunacion:
+          type: date
+          example: 1999-02-01
+        nroDocis:
+          type: integer
+          example: 1
+    EmpleadoUpdate:
+      type: object
+      properties:
+        cedula:
+          type: string
+          example: 10023344554
+        nombres:
+          type: string
+          example: Juan Manuel
+        apellidos:
+          type: string
+          example: Kruger Rios
+        email:
+          type: string
+          example: manuel2022@mail.com
+        fechaNacimiento:
+          type: date
+          example: 1999-02-01
+        domicilio:
+          type: string
+          example: Calle Juan Mera y Cristobal Colón
+        telefono:
+          type: string
+          example: 09976636366
+        estadoVacunacion:
+          type: boolean
+          example: true
+        tipoVacuna:
+          type: string
+          example: Pfizer
+        fechaVacunacion:
+          type: date
+          example: 1999-02-01
+        nroDocis:
+          type: integer
+          example: 1
+    Empleado:
+      type: object
+      properties:
+        id:
+          type: UUID
+          example: ab068e82-6021-4301-b269-ffc0daf16f8e
+        cedula:
+          type: string
+          example: 10023344554
+        nombres:
+          type: string
+          example: Juan Manuel
+        apellidos:
+          type: string
+          example: Kruger Rios
+        email:
+          type: string
+          example: manuel2022@mail.com
+        fechaNacimiento:
+          type: date
+          example: 1999-02-01
+        domicilio:
+          type: string
+          example: Calle Juan Mera y Cristobal Colón
+        telefono:
+          type: string
+          example: 09976636366
+        estadoVacunacion:
+          type: boolean
+          example: true
+        tipoVacuna:
+          type: string
+          example: Pfizer
+        fechaVacunacion:
+          type: date
+          example: 1999-02-01
+        nroDocis:
+          type: integer
+          example: 1

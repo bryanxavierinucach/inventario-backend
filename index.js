@@ -31,7 +31,7 @@ app.use('/', router);
 
 // Routes of usuarios
 require('./src/modules/autorization/routes/user.routes.js')(app);
-require('./src/modules/autorization/routes/profile.routes.js')(app);
+require('./src/modules/autorization/routes/empleado.routes.js')(app);
 require('./src/modules/autorization/routes/oauth.routes.js')(app);
 
 

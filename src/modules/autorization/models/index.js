@@ -18,23 +18,13 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelizeConnector;
 
 db.user = require('./user.model.js')(sequelizeConnector, Sequelize);
-db.profile = require('./profile.model.js')(sequelizeConnector, Sequelize);
-db.profileCategory = require('./profile-category.model.js')(sequelizeConnector, Sequelize);
+db.empleado = require('./empleado.model.js')(sequelizeConnector, Sequelize);
 
 
 /***************************Relaciones*********************************/
-
-//Relación entre profile y user
-db.user.hasOne(db.profile);
-db.profile.belongsTo(db.user, { foreignKey: 'userId' });
-
-
-db.profile.hasMany(db.profileCategory, { as: 'profileCategory' });
-
-db.profileCategory.belongsTo(db.profile, { foreignKey: 'profileId'});
 
 
 
 module.exports = db;
  
-// db.sequelize.sync();
+//db.sequelize.sync();

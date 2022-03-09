@@ -2,45 +2,44 @@
 const Sequelize = require('sequelize');
 
 module.exports = (sequelizeConnector) => {
-    return sequelizeConnector.define('profile', {
+    return sequelizeConnector.define('empleado', {
         id: {
             type: Sequelize.UUID,
             primaryKey: true,
             defaultValue: Sequelize.UUIDV4,
         },
-        country: {
+        cedula: {
             type: Sequelize.STRING
         },
-        city: {
+        nombres: {
             type: Sequelize.STRING
         },
-        economicSector: {
+        apellidos: {
             type: Sequelize.STRING,
-            field: 'economic_sector'
         },
-        linkedin: {
+        email: {
+            type: Sequelize.STRING,
+        },
+        fechaNacimiento: {
+            type: Sequelize.DATE
+        },
+        domicilio: {
+            type: Sequelize.TEXT,
+        },
+        telefono: {
             type: Sequelize.STRING
         },
-        instagram: {
+        estadoVacunacion: {
+            type: Sequelize.BOOLEAN
+        },
+        tipoVacuna: {
             type: Sequelize.STRING
         },
-        website: {
-            type: Sequelize.STRING
+        fechaVacunacion: {
+            type: Sequelize.DATE
         },
-        github: {
-            type: Sequelize.STRING
-        },
-        telephone: {
-            type: Sequelize.JSON
-        },
-        userId: {
-            type: Sequelize.UUID,
-            allowNull: false,
-            unique: true,
-            field: "user_id"
-        },
-        summary: {
-            type: Sequelize.TEXT
+        nroDocis: {
+            type: Sequelize.INTEGER
         },
     },
         {
