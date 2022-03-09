@@ -1,0 +1,18 @@
+tags:
+  name: Auth
+  description: Endpoints para autenticación
+components: 
+  schemas:
+    SocialFlow:
+      type: object
+      properties:
+        code:
+          type: string
+          example: 146b596d-c534-4873-bad3-c3e6b2e2b63a.37d83a62
+        sessionState:
+          type: string
+          example: 146b596d-c534-4873-bad3-c3e6b2e2b63a.37d83a62
+        redirectUri:
+          type: string
+          example: http://localhost:4200/auth/register/social
+        

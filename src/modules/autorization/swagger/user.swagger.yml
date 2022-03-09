@@ -1,0 +1,126 @@
+tags:
+  name: Usuario
+  description: Endpoints para usuarios
+components: 
+  schemas:
+    UsuarioCreate:
+      type: object
+      properties:
+        username:
+          type: string
+          example: xavier
+        firstName:
+          type: string
+          example: xavier
+        lastName:
+          type: string
+          example: xavier
+        email:
+          type: string
+          example: prueba@blockchainempresarial.com
+        password:
+          type: string
+          example: contraseña
+        userType:
+          type: int
+          example: 0
+        walletAddress:
+          type: string
+          example: 'cascascascsww4454t334f43t541223d23d'
+        maturity:
+          type: string
+          example: 'alta'
+        role:
+          type: string
+          example: 'admin'
+        avatar:
+          type: bytea
+          example: 'RVNUTyBFUyBVTkEgUFJVRUJB'
+    UsuarioCreateSocial:
+      type: object
+      properties:
+        id:
+          type: UUID
+          example: ab068e82-6021-4301-b269-ffc0daf16f8e
+        role:
+          type: string
+          example: 'pyme'
+    UsuarioUpdate:
+      type: object
+      properties:
+        firstName:
+          type: string
+          example: xavier
+        lastName:
+          type: string
+          example: xavier
+        email:
+          type: string
+          example: prueba@blockchainempresarial.com
+        password:
+          type: string
+          example: contraseña
+        userType:
+          type: int
+          example: 0
+        walletAddress:
+          type: string
+          example: 'cascascascsww4454t334f43t541223d23d'
+        maturity:
+          type: string
+          example: 'alta'
+        role:
+          type: string
+          example: 'admin'
+        avatar:
+          type: bytea
+          example: 'RVNUTyBFUyBVTkEgUFJVRUJB'
+    UsuarioUpdateKey:
+      type: object
+      properties:
+        firstName:
+          type: string
+          example: xavier
+        lastName:
+          type: string
+          example: xavier
+        avatar:
+          type: bytea
+          example: 'RVNUTyBFUyBVTkEgUFJVRUJB'
+    Usuario:
+      type: object
+      properties:
+        id:
+          type: UUID
+          example: ab068e82-6021-4301-b269-ffc0daf16f8e
+        username:
+          type: string
+          example: xavier
+        firstName:
+          type: string
+          example: xavier
+        lastName:
+          type: string
+          example: xavier
+        email:
+          type: string
+          example: prueba@blockchainempresarial.com
+        password:
+          type: string
+          example: contraseña
+        userType:
+          type: int
+          example: 0
+        walletAddress:
+          type: string
+          example: 'cascascascsww4454t334f43t541223d23d'
+        maturity:
+          type: string
+          example: 'alta'
+        role:
+          type: string
+          example: 'admin'
+        avatar:
+          type: bytea
+          example: 'RVNUTyBFUyBVTkEgUFJVRUJB'
+

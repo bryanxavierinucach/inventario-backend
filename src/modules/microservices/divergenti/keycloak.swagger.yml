@@ -1,0 +1,23 @@
+tags:
+  name: Keycloak
+  description: Endpoints consumo microservicios keycloak
+components:
+  schemas:
+    KeycloakCreate:
+      type: object
+      properties:
+        name:
+          type: string
+          example: nombre del talento
+    KeycloakUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+          example: nombre del talento
+    Keycloak:
+      type: object
+      properties:
+        data:
+          type: JSON
+          example: {"id": "08e1751f-e2f7-466c-aa2c-5808ee29b2d8", "name": "TALENTO DIGITAL", "path": "talento/TALENTO DIGITAL", "attributes": {}, "realmRoles": [], "clientRoles": {},"subGroups": []}
