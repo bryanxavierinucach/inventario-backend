@@ -1,7 +1,7 @@
 {
-  "name": "divergenti-api",
+  "name": "inventario-api",
   "version": "1.0.0",
-  "description": "Servicios api divergenti",
+  "description": "Servicios api inventario",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js --exec babel-node",
