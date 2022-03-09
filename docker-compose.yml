@@ -1,0 +1,20 @@
+version: '3'
+networks:
+    app-network:
+services:
+  divergenti-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - app-network
+    image: divergenti-api-services-image
+    container_name: divergenti-api-services
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "3000:3000"
+    #volumes:
+    #  - .:/opt/certero/certero-api-services/web/api/blokcerts/
+    #  - node_modules:/opt/certero/certero-api-services/web/api/blokcerts/node_modules
+    command: /opt/divergenti/divergenti-api/nodemon index.js
