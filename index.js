@@ -44,7 +44,7 @@ const options = {
     definition: {
         openapi: "3.0.0",
         info: {
-            title: "MICROSERVICE - DIVERGENTI",
+            title: "MICROSERVICE - INVENTARIO",
             version: "1.0.0",
             description:
                 "Documentación de servicios REST",
