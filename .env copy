@@ -1,0 +1,37 @@
+PORT=3000
+//DB_USER=divergenti
+DB_PASSWORD=d1v3r!Gent1s
+DB_USER=postgres
+//DB_PASSWORD=root
+
+TOKEN = https://authdev.divergenti.cl/auth/realms/divergenti/protocol/openid-connect/token
+LOGOUT = https://authdev.divergenti.cl/auth/realms/divergenti/protocol/openid-connect/logout
+KEYCLOAK_GRANTYPE = client_credentials
+KEYCLOAK_CLIENTID = admin-cli
+KEYCLOAK_CLIENTSECRET = 8e68ddef-4325-41fc-8e17-01f23bfd88da
+KEYCLOAK_CLIENTID_USER = divergenti-api-social
+KEYCLOAK_CLIENTSECRET_USER = db92ae5f-05f2-480e-b8ce-9315ab0e68e8
+KEYCLOAK_USERS = https://authdev.divergenti.cl/auth/admin/realms/divergenti/users/
+KEYCLOAK_GROUPS_TALENT = https://authdev.divergenti.cl/auth/admin/realms/divergenti/groups/8ba149fc-bce5-4c4d-8afe-dca495e58c38
+KEYCLOAK_GROUPS = https://authdev.divergenti.cl/auth/admin/realms/divergenti/groups/
+
+KEYCLOAK_ROLE = https://authdev.divergenti.cl/auth/admin/realms/divergenti/roles/
+SMTP_USER= holadiver@divergenti.cl
+SMTP_PASS= ac-qYx-ghyxs7@nlisike
+SMTP_HOST= smtp.migadu.com
+SMTP_PORT= 587
+
+BLOCKCORE_API=http://18.119.94.234:39320/api/
+BLOCKCORE_WALLET_NAME=admin
+BLOCKCORE_WALLET_PASSWORD=b#%BHamKZkaK
+
+CLIENT_ID= 78p4r53vueb3f1
+CLIENT_SECERT= CwIxTaN6GIHW32qG
+CALLBACK_URL= https://apidev.divergenti.cl/auth/linkedin/callback
+
+CRON_TIME= 0 0 0 * * *
+
+COUNTRIES = https://restcountries.com/v2/all?fields=name,capital,flag,callingCodes,alpha3Code
+
+KEYCLOAK_CLIENT_ID_SOCIAL = divergenti-api-social
+KEYCLOAK_CLIENT_SECRET_SOCIAL = db92ae5f-05f2-480e-b8ce-9315ab0e68e8
