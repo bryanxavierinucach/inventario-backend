@@ -3,9 +3,12 @@ const db = require('../models/index');
 const Empleado = db.empleado;
 const DataBaseService = require('./../../../utils/services/database.service');
 const PaginateService = require('./../../../utils/services/paginate.service');
-
+const { diver_admin } = require('../../../utils/config/roles.config');
 const errorsGen = require('../../../utils/errors/general.error');
 
+//Microservicio desde el keyloak control de roles
+const KeycloakService = require('../../microservices/divergenti/keycloak.service');
+const keycloakService = new KeycloakService();
 const dbService = new DataBaseService();
 const paginateService = new PaginateService();
 
@@ -17,6 +20,10 @@ module.exports = class EmpleadoService {
    */
   async save(req, res) {
     try {
+      // Verficar si existe el rol de admin
+      const userRoles = keycloakService.getUserIdRoles(req.headers);
+      if (!keycloakService.isExistRole(userRoles.roles, diver_admin))
+        return res.status(401).send(errorsGen.gen_no_auth);
       const {
         cedula,
         nombres,
@@ -60,6 +67,10 @@ module.exports = class EmpleadoService {
    */
   async update(req, res) {
     try {
+      // Verficar si existe el rol de admin
+      const userRoles = keycloakService.getUserIdRoles(req.headers);
+      if (!keycloakService.isExistRole(userRoles.roles, diver_admin))
+        return res.status(401).send(errorsGen.gen_no_auth);
       const {
         cedula,
         nombres,
@@ -107,6 +118,10 @@ module.exports = class EmpleadoService {
    */
   async findAll(req, res, where, include) {
     try {
+      // Verficar si existe el rol de admin
+      const userRoles = keycloakService.getUserIdRoles(req.headers);
+      if (!keycloakService.isExistRole(userRoles.roles, diver_admin))
+        return res.status(401).send(errorsGen.gen_no_auth);
       const paramsQuery = dbService.getParamsQuery(req.query);
       const list = await paginateService.paginate(
         Empleado,
@@ -123,28 +138,28 @@ module.exports = class EmpleadoService {
       return res.status(500).send(errorsGen.gen_no_fetch);
     }
   }
-//   /**
-//    * Encontrar todos los Empleado por el id del usuario
-//    * @param {*} req
-//    * @param {*} res
-//    * @param {*} where Opcional
-//    * @param {*} include Opcional
-//    */
-//   async findAllByIdUser(req, res) {
-//     try {
-//       const id = req.params.id;
-//       const list = await Interest.findAll({
-//         where: {
-//           userId: id,
-//         },
-//         include: InterestList,
-//       });
-//       res.send(list);
-//     } catch (error) {
-//       console.log('Failed to fetch ', error);
-//       return res.status(500).send(errorsGen.gen_no_fetch);
-//     }
-//   }
+  //   /**
+  //    * Encontrar todos los Empleado por el id del usuario
+  //    * @param {*} req
+  //    * @param {*} res
+  //    * @param {*} where Opcional
+  //    * @param {*} include Opcional
+  //    */
+  //   async findAllByIdUser(req, res) {
+  //     try {
+  //       const id = req.params.id;
+  //       const list = await Interest.findAll({
+  //         where: {
+  //           userId: id,
+  //         },
+  //         include: InterestList,
+  //       });
+  //       res.send(list);
+  //     } catch (error) {
+  //       console.log('Failed to fetch ', error);
+  //       return res.status(500).send(errorsGen.gen_no_fetch);
+  //     }
+  //   }
 
   /**
    * Encontrar intereses
@@ -153,6 +168,10 @@ module.exports = class EmpleadoService {
    */
   async findAllEmpleado(req, res) {
     try {
+      // Verficar si existe el rol de admin
+      const userRoles = keycloakService.getUserIdRoles(req.headers);
+      if (!keycloakService.isExistRole(userRoles.roles, diver_admin))
+        return res.status(401).send(errorsGen.gen_no_auth);
       const list = await Empleado.findAll({});
       res.send(list);
     } catch (error) {
@@ -167,6 +186,10 @@ module.exports = class EmpleadoService {
    * @param {*} res
    */
   findById(req, res) {
+    // Verficar si existe el rol de admin
+    const userRoles = keycloakService.getUserIdRoles(req.headers);
+    if (!keycloakService.isExistRole(userRoles.roles, diver_admin))
+      return res.status(401).send(errorsGen.gen_no_auth);
     Empleado.findByPk(req.params.id).then((data) => {
       res.send(data);
     });
@@ -181,6 +204,10 @@ module.exports = class EmpleadoService {
     try {
       const id = req.params.id;
       const where = { id };
+      // Verficar si existe el rol de admin
+      const userRoles = keycloakService.getUserIdRoles(req.headers);
+      if (!keycloakService.isExistRole(userRoles.roles, diver_admin))
+        return res.status(401).send(errorsGen.gen_no_auth);
       const result = await dbService.delete(Empleado, where, 'Empleado');
       res.status(result.code).send({ message: result.message });
     } catch (error) {
