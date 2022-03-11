@@ -22,7 +22,9 @@ db.empleado = require('./empleado.model.js')(sequelizeConnector, Sequelize);
 
 
 /***************************Relaciones*********************************/
-
+//Relación entre profile y user
+db.user.hasOne(db.empleado);
+db.empleado.belongsTo(db.user, { foreignKey: 'userId' });
 
 
 module.exports = db;

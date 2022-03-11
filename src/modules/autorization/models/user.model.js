@@ -14,22 +14,14 @@ module.exports = (sequelizeConnector) => {
         user: {
             type: Sequelize.STRING
         },
-        userType: {
-            type: Sequelize.INTEGER,
-            field:'user_type'
+        nombres: {
+            type: Sequelize.STRING
         },
-        walletAddress: {
-            type: Sequelize.TEXT,
-            field: 'wallet_address'
-        },
-        maturity: {
+        apellidos: {
             type: Sequelize.STRING
         },
         email: {
             type: Sequelize.STRING
-        },
-        avatar: {
-            type: Sequelize.TEXT
         },
         creation_time: {
             type: Sequelize.DATE,

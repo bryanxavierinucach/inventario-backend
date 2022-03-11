@@ -8,17 +8,11 @@ module.exports = (sequelizeConnector) => {
             primaryKey: true,
             defaultValue: Sequelize.UUIDV4,
         },
-        cedula: {
-            type: Sequelize.STRING
-        },
-        nombres: {
-            type: Sequelize.STRING
-        },
-        apellidos: {
-            type: Sequelize.STRING,
-        },
-        email: {
-            type: Sequelize.STRING,
+        userId: {
+            type: Sequelize.UUID,
+            allowNull: false,
+            unique: true,
+            field: "user_id"
         },
         fechaNacimiento: {
             type: Sequelize.DATE
