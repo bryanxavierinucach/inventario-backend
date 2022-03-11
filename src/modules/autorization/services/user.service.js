@@ -277,6 +277,9 @@ module.exports = class UserService {
       const tokenByKeycloak = await getToken();
       const body = {};
 
+      if (req.body.username) {
+        body.firstName = req.body.username;
+      }
       if (req.body.firstName) {
         body.firstName = req.body.firstName;
       }
@@ -284,9 +287,10 @@ module.exports = class UserService {
       if (req.body.lastName) {
         body.lastName = req.body.lastName;
       }
-      if (req.bod) {
-        bod = req.bod;
+      if (req.body.email) {
+        body.lastName = req.body.email;
       }
+      
       const resKeycloak = await fetch(process.env.KEYCLOAK_USERS + id, {
         method: 'PUT',
         headers: {
@@ -299,8 +303,14 @@ module.exports = class UserService {
       if (resKeycloak.status != 204)
         res.status(500).send(errorsUser.user_exist);
 
-      // Create user on database divergenti
+      // // Create user on database divergenti
       const where = { id };
+      const data = {
+          user: req.body.username,
+          nombres: req.body.firstName,
+          apellidos: req.body.lastName,
+          email: req.body.email
+      }
       const result = await dbService.update(User, data, where, 'Usuario');
       res.status(result.code).send({ message: result.message });
     } catch (error) {
