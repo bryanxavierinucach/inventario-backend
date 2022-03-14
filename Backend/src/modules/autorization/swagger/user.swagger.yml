@@ -1,0 +1,72 @@
+tags:
+  name: Usuario
+  description: Endpoints para usuarios
+components: 
+  schemas:
+    UsuarioCreate:
+      type: object
+      properties:
+        cedula:
+          type: string
+          example: 103232323323
+        firstName:
+          type: string
+          example: xavier
+        lastName:
+          type: string
+          example: Inuca
+        email:
+          type: string
+          example: prueba@blockchainempresarial.com
+        password:
+          type: string
+          example: contraseña
+    UsuarioCreateSocial:
+      type: object
+      properties:
+        id:
+          type: UUID
+          example: ab068e82-6021-4301-b269-ffc0daf16f8e
+   
+    UsuarioUpdate:
+      type: object
+      properties:
+        firstName:
+          type: string
+          example: xavier
+        lastName:
+          type: string
+          example: xavier
+   
+    UsuarioUpdateKey:
+      type: object
+      properties:
+        firstName:
+          type: string
+          example: xavier
+        lastName:
+          type: string
+          example: xavier
+    Usuario:
+      type: object
+      properties:
+        id:
+          type: UUID
+          example: ab068e82-6021-4301-b269-ffc0daf16f8e
+        cedula:
+          type: string
+          example: 100315151551
+        firstName:
+          type: string
+          example: xavier
+        lastName:
+          type: string
+          example: xavier
+        email:
+          type: string
+          example: prueba@blockchainempresarial.com
+        password:
+          type: string
+          example: contraseña
+      
+
